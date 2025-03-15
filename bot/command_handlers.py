@@ -16,7 +16,10 @@ async def process_start_command(message: Message, state: FSMContext):
     # if not await check_user_in_table(user_id):
     print(message.from_user.id)
 
-        # await state.set_state(FSM_ST.after_start)
+    # await state.set_state(FSM_ST.after_start)
+    # user_state = await state.get_state()
+    # user_data = await state.get_data()
+
         # await insert_new_user_in_table(user_id, user_name)
         # bot_dict = await dp.storage.get_data(key=bot_storage_key)  # Получаю словарь бота
         # bot_dict[message.from_user.id] = {'name':user_name, 'order':{}}  # Создаю пустой словарь для заметок юзера

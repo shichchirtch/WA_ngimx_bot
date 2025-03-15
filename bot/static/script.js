@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let pricePizzaElement = document.querySelector("#price");
         let basePrice = parseFloat(pricePizzaElement.getAttribute("data-price")); // Берём цену из HTML
         let quantity = 1;
-        const BASE_URL = "https://8fd0-2a00-20-45-33fc-a510-bd5e-eb8c-7b9d.ngrok-free.app";
+        const BASE_URL = "https://41ae-2a00-20-5-96e1-cdcb-20ae-69c5-1178.ngrok-free.app";
 
         decreaseBtn.addEventListener("click", function () {
             if (quantity > 1) {

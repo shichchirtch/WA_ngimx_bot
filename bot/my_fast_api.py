@@ -24,9 +24,11 @@ f_api = FastAPI(
 )
 
 
+
 templ_dir = Path(__file__).parent / "templates"
 templates = Jinja2Templates(directory=templ_dir)
-static_dir = Path(__file__).parent / "static"  # Теперь путь точный
+
+static_dir = Path(__file__).parent / "static"
 
 f_api.mount("/static", StaticFiles(directory=static_dir), name="static")
 
@@ -55,6 +57,7 @@ async def receive_telegram_data(data: dict):
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "pizzas": pizzas})
 
+# --------------------------------------->  Вторая страница
 
 @f_api.get("/pizza/{pizza_id}")
 async def pizza_detail(request: Request, pizza_id: int):
@@ -107,6 +110,7 @@ async def cart_page(data: dict):
 
 @f_api.get("/cart")
 async def get_cart(request: Request):
+    print('request =', request)
     total_price = sum(item['price'] for item in server_cart)
     return templates.TemplateResponse("cart.html",
     {"request": request, "cart": server_cart, "total_price": total_price})

@@ -13,10 +13,9 @@ class Base(DeclarativeBase):
 metadata = Base.metadata
 
 class User(Base):
-
     __tablename__ = 'users'
     index: Mapped[int] = mapped_column(Integer, autoincrement=True, primary_key=True)
-    tg_us_id: Mapped[int] = mapped_column(BigInteger) # tg user id
+    tg_us_id: Mapped[int] = mapped_column(BigInteger, unique=True) # tg user id
     user_name: Mapped[str] = mapped_column(String(200), nullable=False)
     quantity_orders: Mapped[str] = mapped_column(Integer, default=0, nullable=True)
     total_summ: Mapped[str] = mapped_column(Integer, default=0, nullable=True)

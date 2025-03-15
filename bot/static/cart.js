@@ -39,7 +39,7 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
         alert("Ошибка: Не удалось получить Telegram name.");
         return;
     }
-    const HOST_PATH = 'https://8fd0-2a00-20-45-33fc-a510-bd5e-eb8c-7b9d.ngrok-free.app'
+    const HOST_PATH = 'https://41ae-2a00-20-5-96e1-cdcb-20ae-69c5-1178.ngrok-free.app'
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];  // Достаём корзину из localStorage
     console.log('cartItems = ', cartItems[0]['quantity'])
 
